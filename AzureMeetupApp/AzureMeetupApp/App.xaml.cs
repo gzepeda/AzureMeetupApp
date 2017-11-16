@@ -13,7 +13,8 @@ namespace AzureMeetupApp
 		{
 			InitializeComponent();
 
-			MainPage = new AzureMeetupApp.MainPage();
+            //MainPage = new AzureMeetupApp.MainPage();
+		    MainPage = new ListaDePersonasPage();
 		}
 
 		protected override void OnStart ()
