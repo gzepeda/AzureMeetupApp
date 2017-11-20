@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AzureMeetupApp.ViewModel;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -12,22 +13,15 @@ namespace AzureMeetupApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaDePersonasPage : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
+        public PersonasViewModel model;
 
         public ListaDePersonasPage()
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-			
-			MyListView.ItemsSource = Items;
+            model = new PersonasViewModel();
+
+            BindingContext = model;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)

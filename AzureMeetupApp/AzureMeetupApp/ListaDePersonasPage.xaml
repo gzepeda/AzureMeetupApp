@@ -2,32 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AzureMeetupApp.ListaDePersonasPage">
-  <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
+    <StackLayout Spacing="0">
+        <ListView x:Name="MyListView"
+            ItemsSource="{Binding Entidades}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
-            
-    <!--Built in Cells-->
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding .}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>
-    
-    <!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
-  </ListView>
+            <!--Custom View Cells-->
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                  <!--
+                 <ImageCell Text="{Binding Nombre}"
+                                Detail="{Binding Descripcion}"
+                                ImageSource="{Binding Avatar}"/>
+                 -->
+                    <ViewCell>
+                        <StackLayout Padding="15, 5, 15, 5" Orientation="Horizontal">
+                            <Image Source="{Binding Avatar}"  />
+                            <Label Text="{Binding Nombre}" 
+                                    Style="{DynamicResource ListItemTextStyle}" />
+                            <Label Text="{Binding Descripcion}" 
+                                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
