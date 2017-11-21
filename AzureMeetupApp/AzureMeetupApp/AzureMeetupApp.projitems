@@ -12,6 +12,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Departments.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DeptEmp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DeptManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Employee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\GenderEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Salaries.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Titles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListaDeEmployees.xaml.cs">
+      <DependentUpon>ListaDeEmployees.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ListaDePersonasPage.xaml.cs">
       <DependentUpon>ListaDePersonasPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -22,6 +33,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Entidad.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\IEntidad.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MockEntidad.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\BackendDotNetCore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IBackend.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EmployeesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PersonasViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -36,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListaDePersonasPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListaDeEmployees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
